@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+
+  p this is the team view
+  p
+    for team in teams
+      p= team.team_name
+      for employee in team.employees
+        li= employee.name
+      hr

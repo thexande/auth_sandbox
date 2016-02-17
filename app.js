@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var tickets = require('./routes/tickets');
 var employees = require('./routes/employees');
 var users = require('./routes/users');
+var teams = require('./routes/teams');
 var user_bouncer = require('./lib/user_bouncer');
 
 var app = express();
@@ -32,6 +33,7 @@ app.use('/users', users);
 app.use('/tickets', user_bouncer);
 app.use('/tickets', tickets);
 app.use('/employees', employees);
+app.use('/teams', teams);
 
 
 // catch 404 and forward to error handler
