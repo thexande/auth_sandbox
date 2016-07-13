@@ -23,11 +23,11 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser("asdfjasasdfads"));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cookieParser("asdfjasasdfads"));
+
 app.use('/', auth);
-app.use('/', routes);
 app.use('/users', users);
 app.use('/tickets', user_bouncer);
 app.use('/tickets', tickets);
