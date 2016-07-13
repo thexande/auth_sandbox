@@ -7,14 +7,13 @@ function Employees() {
 }
 
 router.get('/', function(req, res, next) {
-      var line1 = "SELECT employees.name , teams.team_name FROM employees ";
-      var line2 = "join assignments on employees.id = assignments.employee_id ";
-      var line3 = "join teams on teams.id = assignments.team_id " ;
-      var line4 = line1+line2+line3;
+      var query = `SELECT employees.name , teams.team_name FROM employees
+       join assignments on employees.id = assignments.employee_id
+       join teams on teams.id = assignments.team_id`;
 
       var people = [];
 
-      knex.raw(line4)
+      knex.raw(query)
       .then(function (employees) {
       console.log(employees);
       employees = employees.rows;
