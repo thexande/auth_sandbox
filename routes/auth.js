@@ -24,5 +24,8 @@ router.get('/no_auth', function(req, res, next) {
     res.render("auth/yousuck");
 });
 
+router.get('/', (req, res, next) => {
+    res.redirect('/signup')
+})
 
 module.exports = router;
